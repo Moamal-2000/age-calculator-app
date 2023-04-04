@@ -15,6 +15,7 @@ const dateEle = document.querySelector('#date')
 // Variables
 let validatedInputs = 0
 let isCalcDone = true;
+let focusedInputIndex = 0
 const redColor = '#ff5757'
 const date = new Date()
 const currentYear = date.getFullYear()
@@ -199,9 +200,33 @@ dateEle.textContent = `${currentMonth}/${currentDay}/${currentYear}`
 form.addEventListener('submit', (e) => handleSubmit(e))
 
 
-inputs.forEach(input => {
+inputs.forEach((input, i) => {
   input.addEventListener('input', () => handleInput(input))
+  input.addEventListener('click', () => focusedInputIndex = i)
 })
 
 
 window.onload = setInterval(showtime, 500);
+
+
+document.addEventListener('keydown', function(e) {
+  const focusedInput = document.activeElement
+
+  if (focusedInput.id === 'year' && focusedInput.value.length === 0)
+    focusedInput.value = '1900'
+
+  if (e.key === 'ArrowUp') focusedInput.value++
+  else if (e.key === 'ArrowDown' && focusedInput.value > 0)
+    focusedInput.value--
+
+  if (e.key === "ArrowLeft" && focusedInputIndex !== 0) {
+    focusedInputIndex--
+    inputs[focusedInputIndex].focus()
+  }
+
+  if (e.key === "ArrowRight" && focusedInputIndex !== inputs.length - 1) {
+    focusedInputIndex++
+    inputs[focusedInputIndex].focus()
+  }
+});
+
