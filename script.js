@@ -212,12 +212,15 @@ window.onload = setInterval(showtime, 500);
 document.addEventListener('keydown', function(e) {
   const focusedInput = document.activeElement
 
-  if (focusedInput.id === 'year' && focusedInput.value.length === 0)
+  if (e.key === 'ArrowUp') {
+    if (focusedInput.id === 'year' && focusedInput.value.length === 0)
     focusedInput.value = '1900'
+    focusedInput.value++
+  }
 
-  if (e.key === 'ArrowUp') focusedInput.value++
-  else if (e.key === 'ArrowDown' && focusedInput.value > 0)
+  if (e.key === 'ArrowDown' && focusedInput.value > 0) {
     focusedInput.value--
+  }
 
   if (e.key === "ArrowLeft" && focusedInputIndex !== 0) {
     focusedInputIndex--
