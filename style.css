@@ -1,0 +1,376 @@
+/* Global [Start] */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: auto;
+  color: var(--off-black);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--off-white);
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 900px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 650px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 520px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: 90%;
+  }
+}
+
+:root {
+  --purple: #854dff;
+  --light-red: #ff5757;
+  --white: #fff;
+  --off-white: #f0f0f0;
+  --light-grey: #dbdbdb;
+  --smokey-grey: #716f6f;
+  --off-black: #141414;
+}
+
+input,
+button {
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+/* Global [End] */
+
+
+
+
+
+
+
+
+/* Main [Start] */
+
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+main .age-calc {
+  background-color: var(--white);
+  padding: 34px;
+  border-radius: 10px 10px 120px 10px;
+  -webkit-border-radius: 10px 10px 120px 10px;
+  -moz-border-radius: 10px 10px 120px 10px;
+  -ms-border-radius: 10px 10px 120px 10px;
+  -o-border-radius: 10px 10px 120px 10px;
+  width: 550px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  main .age-calc {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 540px) {
+  main .age-calc {
+    width: 100%;
+  }
+}
+
+main .age-calc .inputs {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 540px) {
+  main .age-calc .inputs {
+    gap: 10px;
+    justify-content: center;
+  }
+}
+
+main .age-calc .inputs .input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+main .age-calc .inputs .input label {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  transform: scale(0.85) translateX(-9px);
+  -webkit-transform: scale(0.85) translateX(-9px);
+  -moz-transform: scale(0.85) translateX(-9px);
+  -ms-transform: scale(0.85) translateX(-9px);
+  -o-transform: scale(0.85) translateX(-9px);
+  transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
+}
+
+@media (max-width: 540px) {
+  main .age-calc .inputs .input label {
+    transform: scale(0.85) translateX(-5px);
+    -webkit-transform: scale(0.85) translateX(-5px);
+    -moz-transform: scale(0.85) translateX(-5px);
+    -ms-transform: scale(0.85) translateX(-5px);
+    -o-transform: scale(0.85) translateX(-5px);
+  }
+}
+
+main .age-calc .inputs .input input {
+  width: 110px;
+  padding: 8px 10px;
+  border: solid 1px var(--light-grey);
+  font-weight: 600;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: border-color 0.3s;
+  -webkit-transition: border-color 0.3s;
+  -moz-transition: border-color 0.3s;
+  -ms-transition: border-color 0.3s;
+  -o-transition: border-color 0.3s;
+}
+
+@media (max-width: 540px) {
+  main .age-calc .inputs .input input {
+    width: 70px;
+    font-size: 18px;
+  }
+}
+
+main .age-calc .inputs .input input:hover,
+main .age-calc .inputs .input input:focus {
+  border-color: var(--purple);
+}
+
+main .age-calc .inputs .input input::placeholder {
+  color: var(--smokey-grey);
+}
+
+main .age-calc .inputs .input .invalid-message {
+  color: var(--light-red);
+  position: absolute;
+  bottom: -24px;
+  font-size: 12px;
+  transform: scale(0.76) translateX(-22px);
+  -webkit-transform: scale(0.76) translateX(-22px);
+  -moz-transform: scale(0.76) translateX(-22px);
+  -ms-transform: scale(0.76) translateX(-22px);
+  -o-transform: scale(0.76) translateX(-22px);
+  width: 150px;
+}
+
+@media (max-width: 540px) {
+  main .age-calc .inputs .input .invalid-message {
+    display: none;
+  }
+}
+
+main .age-calc .line {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  main .age-calc .line {
+    height: 50px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 540px) {
+  main .age-calc .line {
+    margin-top: 0;
+  }
+}
+
+main .age-calc .line hr {
+  width: 120%;
+  border: none;
+  border-bottom: solid 1px var(--light-grey);
+  position: relative;
+}
+
+main .age-calc .line button {
+  background-color: var(--purple);
+  border: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  padding: 10px;
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+}
+
+@media (max-width: 992px) {
+  main .age-calc .line button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+  }
+}
+
+main .age-calc .line button:hover {
+  background-color: var(--off-black);
+}
+
+main .age-calc .line button img {
+  cursor: inherit;
+  transform: scale(0.85);
+  -webkit-transform: scale(0.85);
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  -o-transform: scale(0.85);
+}
+
+main .age-calc .results div {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: -3px;
+  line-height: 1.2;
+}
+
+@media (max-width: 540px) {
+  main .age-calc .results div {
+    font-size: 40px;
+  }
+}
+
+main .age-calc .results div span:first-child {
+  display: inline-block;
+  color: var(--purple);
+  letter-spacing: 8px;
+  width: 120px;
+}
+
+@media (max-width: 540px) {
+  main .age-calc .results div span:first-child {
+    width: 90px;
+  }
+}
+
+main .age-calc .results div span.fix-y {
+  letter-spacing: -8px;
+}
+
+/* Main [End] */
+
+
+
+
+
+
+/* Footer [Start] */
+
+footer {
+  background-color: var(--white);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #a7a7a7;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+footer p a {
+  color: var(--purple);
+  user-select: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+
+footer p {
+  font-size: 18px;
+}
+
+footer p a:hover {
+  opacity: .8;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.date time {
+  width: 90px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+/* Footer [End] */

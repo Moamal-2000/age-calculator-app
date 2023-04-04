@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo webpage to calculate any age and convert years/months/days by born date">
+  <meta name="keywords" content="age calculator html css javascript frontend mentor challenge front end date days months years">
+  <meta name="author" content="Moamal Alaa">
+  <title>Age calculator app</title>
+  <!-- Main website icon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-calculations-engineering-flaticons-flat-flat-icons.png">
+  <!-- Main css file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <main>
+      <form class="age-calc">
+        <div class="inputs">
+          <div class="input">
+            <label for="day">Day</label>
+            <input id="day" type="text" placeholder="DD" data-max="2" data-limit-date="31" value="10">
+            <span class="invalid-message"></span>
+          </div>
+
+          <div class="input">
+            <label for="month">Month</label>
+            <input id="month" type="text" placeholder="MM" data-max="2" data-limit-date="12" value="3">
+            <span class="invalid-message"></span>
+          </div>
+
+          <div class="input">
+            <label for="year">Year</label>
+            <input id="year" type="text" placeholder="YYYY" data-max="4" value="2023">
+            <span class="invalid-message"></span>
+          </div>
+        </div>
+
+        <div class="line">
+          <hr>
+            <button type="submit">
+              <img src="assets/images/icon-arrow.svg" alt="">
+            </button>
+        </div>
+
+        <div class="results">
+          <div class="years">
+            <span>--</span>years
+          </div>
+
+          <div class="months">
+            <span>--</span>months
+          </div>
+
+          <div class="days">
+            <span>--</span>days
+          </div>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <footer>
+    <div class="date">
+      <time id="date"></time>
+      <time id="time"></time>
+    </div>
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    </p>
+    <p>Coded by <a href="https://www.facebook.com/MoamalAlaa109/">Moamal Alaa</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
